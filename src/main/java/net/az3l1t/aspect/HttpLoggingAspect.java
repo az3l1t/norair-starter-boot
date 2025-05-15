@@ -25,7 +25,7 @@ public class HttpLoggingAspect {
 
         if (httpLoggingProperties.isRequest()) {
             String args = Arrays.toString(joinPoint.getArgs());
-            logMessage.append(String.format("Method %s called with args: %s",
+            logMessage.append(String.format("Method %s called with args: %s ",
                     joinPoint.getSignature().toShortString(), args));
         }
 
