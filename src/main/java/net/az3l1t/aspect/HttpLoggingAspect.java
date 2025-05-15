@@ -51,10 +51,10 @@ public class HttpLoggingAspect {
     }
 
     private void log(String message) {
-        switch (httpLoggingProperties.getLevel().toLowerCase()) {
-            case "debug" -> logger.debug(message);
-            case "warn" -> logger.warn(message);
-            case "error" -> logger.error(message);
+        switch (httpLoggingProperties.getLevel()) {
+            case DEBUG -> logger.debug(message);
+            case WARN -> logger.warn(message);
+            case ERROR -> logger.error(message);
             default -> logger.info(message);
         }
     }

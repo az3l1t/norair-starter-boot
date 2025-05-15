@@ -1,11 +1,12 @@
 package net.az3l1t.config.properties;
 
+import net.az3l1t.config.level.LogLevel;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "http.logging")
 public class HttpLoggingProperties {
     private boolean enabled;
-    private String level = "INFO";
+    private LogLevel level = LogLevel.INFO;
     private boolean request;
     private boolean response;
     private boolean time;
@@ -18,11 +19,11 @@ public class HttpLoggingProperties {
         this.enabled = enabled;
     }
 
-    public String getLevel() {
+    public LogLevel getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(LogLevel level) {
         this.level = level;
     }
 
