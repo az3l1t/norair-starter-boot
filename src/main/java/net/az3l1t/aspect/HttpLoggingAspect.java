@@ -20,10 +20,6 @@ public class HttpLoggingAspect {
 
     @Around("@annotation(net.az3l1t.annotation.LoggingHttp)")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        if (!httpLoggingProperties.isEnabled()) {
-            return joinPoint.proceed();
-        }
-
         StringBuilder logMessage = new StringBuilder();
         long executionTime;
 
